@@ -20,5 +20,7 @@ func main() {
 
 	setupRoutes(app)
 
+	app.Static("/", "./public")
+
 	log.Fatal(app.Listen(":3000"))
 }
