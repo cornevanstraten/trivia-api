@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
   <title>Trivia stuff</title>
-  <link rel="stylesheet" href="/style/main.css?v=1">
+  <link id="styles" rel="stylesheet" href="/style/main.css?v=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -14,3 +14,13 @@
   </div>
 </body>
 </html>
+
+<script id="main" src="/javascript/app.js"></script>
+
+<script>
+  const timeStamp = Date.now()
+  const stylesheetLink = document.querySelector("link#styles")
+  const appScriptLink = document.querySelector("script#main")
+  stylesheetLink.href += `?t=${timestamp}`
+  appScriptLink.src += `?t=${timeStamp}`
+</script>

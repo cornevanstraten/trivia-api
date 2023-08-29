@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/cornevanstraten/trivia-api/database"
+	"github.com/cornevanstraten/trivia-api/handlers"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html/v2"
 )
@@ -21,6 +22,8 @@ func main() {
 	setupRoutes(app)
 
 	app.Static("/", "./public")
+
+	app.Use(handlers.NotFound)
 
 	log.Fatal(app.Listen(":3000"))
 }
